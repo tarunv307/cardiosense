@@ -6,6 +6,7 @@ FastAPI application configuring CORS, health check, API routes, and logging.
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 import os
 
 from backend.api.routes import router
@@ -42,10 +43,19 @@ def health_check():
     }
 
 
-# Mount frontend dist if built
+# Mount frontend dist and serve Single-Page Application (SPA) if built
 dist_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend", "dist")
 if os.path.exists(dist_dir):
-    app.mount("/", StaticFiles(directory=dist_dir, html=True), name="static")
+    assets_dir = os.path.join(dist_dir, "assets")
+    if os.path.exists(assets_dir):
+        app.mount("/assets", StaticFiles(directory=assets_dir), name="assets")
+
+    @app.get("/{full_path:path}")
+    async def serve_spa(full_path: str):
+        target_file = os.path.join(dist_dir, full_path)
+        if full_path and os.path.isfile(target_file):
+            return FileResponse(target_file)
+        return FileResponse(os.path.join(dist_dir, "index.html"))
 
 
 if __name__ == "__main__":
