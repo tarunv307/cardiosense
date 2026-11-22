@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """
 Feature Extraction for ECG Rhythm Screening.
 Extracts clinically grounded time-domain, frequency-domain, and morphological metrics

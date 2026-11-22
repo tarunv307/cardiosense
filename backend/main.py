@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """
 CardioSense AI Backend Application Entrypoint.
 FastAPI application configuring CORS, health check, API routes, and logging.

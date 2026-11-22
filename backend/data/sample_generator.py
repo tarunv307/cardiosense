@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """
 Synthetic & Calibrated Physiological ECG Generator.
 Generates multi-beat ECG recordings using Gaussian P-QRS-T wave models

@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """
 Model Evaluation and Benchmark Metrics.
 Contains cross-validated evaluation results on benchmark ECG datasets

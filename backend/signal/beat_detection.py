@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """
 Pan-Tompkins QRS Detection Algorithm and Heart Rate / HRV Metrics Computation.
 Implements derivative, squaring, moving-window integration, refractory gating,

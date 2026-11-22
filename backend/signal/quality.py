@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """
 Signal Quality Index (SQI) Assessment Module for ECG.
 Provides clinically grounded quality estimation, artifact detection,

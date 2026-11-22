@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """
 Real-Time Continuous ECG Streaming Endpoint using Server-Sent Events (SSE).
 Streams live physiological ECG packets at 250 Hz (10 samples per 40ms tick),

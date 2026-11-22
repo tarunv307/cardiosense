@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """
 ECG Preprocessing Pipeline:
 - Baseline wander removal (0.5 Hz highpass / median subtraction)

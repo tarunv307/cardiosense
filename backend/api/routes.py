@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """
 CardioSense REST API Endpoints.
 Provides endpoints for recordings management, ECG file ingestion,

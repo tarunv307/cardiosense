@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """
 Pydantic data models and schemas for CardioSense.
 Defines types for ECG signals, quality assessment, beat detection,

@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """
 CardioSense AI Rhythm Screening Engine.
 Implements calibrated multi-class rhythm prediction with uncertainty quantification,

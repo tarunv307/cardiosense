@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """
 Data Persistence and In-Memory Clinical Storage.
 Manages ECG recordings, signal caches, analysis results, and review event queues.
@@ -17,7 +19,12 @@ from backend.core.schemas import (
     RhythmCategory,
     SignalQualityStatus,
     PipelineStatus,
-    PipelineStageStatus
+    PipelineStageStatus,
+    QualityMetrics,
+    RhythmPrediction,
+    BeatSegmentation,
+    FeatureSet,
+    RPeak
 )
 from backend.data.sample_generator import generate_scenario_recordings
 from backend.signal.quality import assess_signal_quality
