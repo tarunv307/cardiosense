@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #F5F8FC;
+    color: #0F1E36;
+    @apply font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .bg-canvas {
+    background-color: #F5F8FC;
+  }
+  .bg-surface {
+    background-color: #FFFFFF;
+  }
+  .bg-grid-medical {
+    background-image: radial-gradient(#DFE8F5 1.1px, transparent 1.1px);
+    background-size: 24px 24px;
+  }
+  .bg-clinical-glow {
+    background: radial-gradient(circle at 15% 15%, rgba(30, 96, 226, 0.045) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(21, 66, 161, 0.035) 0%, transparent 45%),
+                #F5F8FC;
+  }
+}
+
+/* Custom scrollbars for clinical monitoring workspaces */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F8FC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8E2F0;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4B5E7D;
+}
+
+/* Print styling for clinical reports */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
