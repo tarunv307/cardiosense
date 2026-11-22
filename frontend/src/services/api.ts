@@ -7,7 +7,8 @@ import {
   ReviewStatus,
 } from '../types/ecg';
 
-const API_BASE = '/api';
+const rawBase = import.meta.env.VITE_API_BASE_URL || '';
+const API_BASE = rawBase ? `${rawBase.replace(/\/+$/, '')}/api` : '/api';
 
 export const api = {
   // Recordings

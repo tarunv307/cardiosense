@@ -118,7 +118,8 @@ export const LiveMonitoringPage: React.FC<LiveMonitoringPageProps> = ({
       return;
     }
 
-    const url = `/api/stream/live-ecg?mode=live&scenario=${selectedScenario}`;
+    const apiBase = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/+$/, '');
+    const url = `${apiBase}/api/stream/live-ecg?mode=live&scenario=${selectedScenario}`;
     const es = new EventSource(url);
     eventSourceRef.current = es;
 
